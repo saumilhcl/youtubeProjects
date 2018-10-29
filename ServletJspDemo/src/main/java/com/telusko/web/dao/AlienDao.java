@@ -13,8 +13,8 @@ public class AlienDao
 		
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/navin","root","root");
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ProductDB", "postgres","admin");
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from alien where aid=" + aid);
 			if(rs.next())
